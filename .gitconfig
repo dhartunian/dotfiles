@@ -1,0 +1,18 @@
+[alias]
+	logx = log --decorate --graph --color --stat --find-renames=90 --find-copies=90
+	logxp = log --decorate --graph --color --stat --find-renames=90 --find-copies=90 -p
+	logxs = log --oneline --decorate --graph --color --branches --remotes --tags
+	logxa = log --pretty=short --decorate --graph --color --branches --remotes --tags
+	rpull = pull --rebase
+	amend = commit --amend
+[color]
+	ui = true
+[user]
+[user]
+	name = David Hartunian
+	initials = dh
+	email = david@positiondev.com
+[core]
+	editor = emacsclient -t
+	excludesfile = /Users/david/.gitignore_global
+	autocrlf = false
