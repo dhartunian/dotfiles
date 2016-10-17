@@ -88,3 +88,5 @@ eval "$(rbenv init -)"
 
 autoload -U bashcompinit
 bashcompinit
+
+alias git=hub

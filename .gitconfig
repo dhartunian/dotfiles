@@ -16,3 +16,5 @@
 	editor = emacsclient -t
 	excludesfile = /Users/david/.gitignore_global
 	autocrlf = false
+[hub]
+	protocol = https
