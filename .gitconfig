@@ -5,6 +5,8 @@
 	logxa = log --pretty=short --decorate --graph --color --branches --remotes --tags
 	rpull = pull --rebase
 	amend = commit --amend
+	co = checkout
+	st = status
 [color]
 	ui = true
 [user]
