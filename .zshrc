@@ -90,3 +90,8 @@ autoload -U bashcompinit
 bashcompinit
 
 alias git=hub
+
+export PSQL_EDITOR=emacs
+export WORKON_HOME=~/dev/.envs
+
+alias ls="ls -haltG"
