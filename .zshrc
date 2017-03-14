@@ -95,3 +95,4 @@ export PSQL_EDITOR=emacs
 export WORKON_HOME=~/dev/.envs
 
 alias ls="ls -haltG"
+source /usr/local/bin/virtualenvwrapper.sh
