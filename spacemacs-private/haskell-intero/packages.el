@@ -34,10 +34,7 @@
     company
     haskell-mode
     hindent
-    (intero :location (recipe
-                       :repo "chrisdone/intero"
-                       :fetcher github
-                       :files ("elisp/intero.el")))
+    intero
     )
   "The list of Lisp packages required by the haskell-intero layer.
 
@@ -83,8 +80,13 @@ Each entry is either:
   (use-package haskell-mode))
 
 (defun haskell-intero/post-init-haskell-mode ()
-  (add-hook 'haskell-mode-hook 'intero-mode))
+  (add-hook 'haskell-mode-hook 'intero-mode)
+  (spacemacs|add-company-hook intero-mode))
 
 (defun haskell-intero/init-intero ()
-  (use-package intero))
-;;; packages.el ends here
+  (use-package intero
+    :defer t
+    ;; This has to be in init because it's a package entry point
+    :init
+    (push 'intero-backend company-backends-intero-mode)))
+; packages.el ends here

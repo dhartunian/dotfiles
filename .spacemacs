@@ -59,6 +59,7 @@ values."
      elm
      purescript
      python
+     auto-completion
 
      ;; ^_^ private packages
      haskell-intero
