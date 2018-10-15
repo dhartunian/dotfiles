@@ -83,7 +83,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 autoload -U bashcompinit
@@ -95,4 +94,7 @@ export PSQL_EDITOR=emacs
 export WORKON_HOME=~/dev/.envs
 
 alias ls="ls -haltG"
-source /usr/local/bin/virtualenvwrapper.sh
+export EDITOR=emacs
+export ALTERNATE_EDITOR=""
+
+export NVM_DIR="$HOME/.nvm"

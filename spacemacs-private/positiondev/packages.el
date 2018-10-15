@@ -94,8 +94,8 @@ Each entry is either:
 (setq haskell-stylish-on-save t)
 
 ;; autosave things
-(setq auto-save-interval 20)
-(setq auto-save-timeout 1)
+(setq auto-save-interval 0)
+(setq auto-save-timeout 0)
 (setq auto-revert-interval 1)
 (setq auto-save-visited-file-name t)
 (setq create-lockfiles nil)
