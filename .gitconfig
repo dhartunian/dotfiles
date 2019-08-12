@@ -2,6 +2,7 @@
 	logx = log --decorate --graph --color --stat --find-renames=90 --find-copies=90
 	logxp = log --decorate --graph --color --stat --find-renames=90 --find-copies=90 -p
 	logxs = log --oneline --decorate --graph --color --branches --remotes --tags
+	logxsl = log --oneline --decorate --graph --color --branches --tags
 	logxa = log --pretty=short --decorate --graph --color --branches --remotes --tags
 	rpull = pull --rebase
 	amend = commit --amend
@@ -16,7 +17,7 @@
 	initials = dh
 	email = david@positiondev.com
 [core]
-	editor = emacsclient -t
+	editor = code --wait
 	excludesfile = /Users/david/.gitignore_global
 	autocrlf = false
 [hub]
