@@ -12,6 +12,9 @@ ln -s "$(pwd)/.gitignore_global" ~/
 rm ~/.zshrc
 ln -s "$(pwd)/.zshrc" ~/
 
+rm ~/.zshenv
+ln -s "$(pwd)/.zshenv" ~/
+
 rm -rf ~/.emacs.d/private
 ln -s "$(pwd)/spacemacs-private" ~/.emacs.d/private
 
