@@ -31,17 +31,12 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     php
      sql
-     yaml
-     nginx
-     csv
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     helm
      better-defaults
      emacs-lisp
      git
@@ -56,8 +51,8 @@ values."
      auto-completion
 
      ;; ^_^ private packages
-     haskell-intero
-     positiondev
+     ;; haskell-intero
+     ;; positiondev
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -259,7 +254,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers nil
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -314,8 +309,10 @@ you should place your code here."
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
   (setq-default dotspacemacs-configuration-layers
                 '((haskell :variables haskell-enable-hindent-style "johan-tibell")))
-  (global-set-key (kbd "C-x b")   'helm-my-mini)
+  ;; (global-set-key (kbd "C-x b")   'helm-my-mini)
+  (require 'ox-md)
   )
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -324,9 +321,10 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-files (quote ("~/Dropbox (Personal)/org/life2.org")))
  '(package-selected-packages
    (quote
-    (php-mode helm-company helm-c-yasnippet fuzzy company-web web-completion-data company-tern company-statistics company-anaconda auto-yasnippet ac-ispell auto-complete toml-mode racer flycheck-rust seq cargo rust-mode ghc winum unfill diminish log4e f s minitest hide-comnt powerline rake inflections spinner org alert markdown-mode yasnippet multiple-cursors company hydra projectile request haskell-mode git-gutter anzu bind-key packed avy inf-ruby iedit smartparens bind-map highlight evil flycheck helm helm-core skewer-mode js2-mode simple-httpd magit magit-popup git-commit with-editor async purescript-mode dash pcre2el haml-mode tern yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit sql-indent spacemacs-theme spaceline smeargle slim-mode shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restart-emacs rbenv rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-isort pug-mode psci psc-ide projectile-rails popwin pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode paradox orgit org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file nginx-mode neotree mwim multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc intero info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag haskell-snippets google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flycheck-haskell flycheck-elm flx-ido fill-column-indicator feature-mode fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elm-mode elisp-slime-nav dumb-jump drupal-mode diff-hl define-word cython-mode csv-mode company-ghci company-ghc column-enforce-mode coffee-mode cmm-mode clean-aindent-mode chruby bundler auto-highlight-symbol auto-compile anaconda-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+    (powerline org-category-capture alert log4e gntp org-plus-contrib markdown-mode magit-popup hydra lv parent-mode projectile request gitignore-mode fringe-helper git-gutter+ git-gutter pos-tip flycheck pkg-info epl flx highlight magit transient git-commit with-editor smartparens iedit anzu evil goto-chg diminish company bind-map bind-key yasnippet packed helm avy helm-core async auto-complete popup f s dash xterm-color ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org sql-indent spaceline smeargle shell-pop restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-download org-bullets open-junk-file neotree mwim multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help elisp-slime-nav dumb-jump diff-hl define-word company-statistics column-enforce-mode clean-aindent-mode auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(safe-local-variable-values
    (quote
     ((intero-targets "wayland:exe:wayland" "wayland:test:wayland_test")
