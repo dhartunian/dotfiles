@@ -2,13 +2,18 @@
 	logx = log --decorate --graph --color --stat --find-renames=90 --find-copies=90
 	logxp = log --decorate --graph --color --stat --find-renames=90 --find-copies=90 -p
 	logxs = log --oneline --decorate --graph --color --branches --remotes --tags
+ 	logxsp = log --oneline --decorate --color --branches
 	logxsl = log --oneline --decorate --graph --color --branches --tags
 	logxa = log --pretty=short --decorate --graph --color --branches --remotes --tags
 	rpull = pull --rebase
 	amend = commit --amend
 	co = checkout
 	st = status
+        rest = reset
+        stats = status
 	hours = log --date-order --pretty=format:'%Cgreen%ad:%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=format:'%a, %0e %b %Y %l:%M %p'
+	rb = branch --sort=-committerdate
+        checkotu = checkout
 [color]
 	ui = true
 [user]
@@ -16,8 +21,20 @@
 	initials = dh
 	email = davidh@cockroachlabs.com
 [core]
-	editor = nano
+	editor = vim
 	autocrlf = false
 	excludesfile = /Users/david/.gitignore_global
 [hub]
 	protocol = https
+[commit]
+	template = /Users/david/.stCommitMsg
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[init]
+	defaultBranch = main
