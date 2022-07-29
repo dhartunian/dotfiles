@@ -8,7 +8,7 @@
 (setq visible-bell t)
 
 ;; Font
-(set-face-attribute 'default nil :font "JetBrains Mono" :height 100)
+(set-face-attribute 'default nil :font "JetBrains Mono" :height 150)
 
 ;; Theme
 (load-theme 'tango-dark)
@@ -32,7 +32,7 @@
 (setq use-package-always-ensure t)
 
 (column-number-mode 1)
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
 (global-visual-line-mode 1)
 
 (global-whitespace-mode 1)
@@ -42,7 +42,7 @@
    whitespace-style
    '(face ; viz via faces
      trailing ; trailing blanks visualized
-     lines-tail ; lines beyond
+     ;; lines-tail ; lines beyond
                 ; whitespace-line-column
      space-before-tab
      space-after-tab
@@ -51,7 +51,7 @@
                  ; when config wants tabs
      empty ; empty lines at beginning or end
      )
-   whitespace-line-column 100 ; column at which
+   ;; whitespace-line-column 100 ; column at which
         ; whitespace-mode says the line is too long
 )
 
@@ -76,3 +76,12 @@
 
 (add-hook 'before-save-hook 'gofmt-before-save)
 
+(setq mac-option-modifier 'meta)
+
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
+(use-package "projectile")
+(use-package "magit")
